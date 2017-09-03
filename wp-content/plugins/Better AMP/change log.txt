@@ -1,0 +1,221 @@
+----------------------------------------------------------------
+Version 1.5.2
+----------------------------------------------------------------
+- Improved: WooCommerce outdated functions updated.
+
+
+----------------------------------------------------------------
+Version 1.5.1 - (1.5.0 was private release)
+----------------------------------------------------------------
+- Added: Related posts added (6 algorithm to show related posts)
+- Added: Comments will be shown in AMP.
+- Added: Option to change share links to short/normal link.
+- Added: CSS validator added for custom css and element css!
+- Added: "WP Speed Grades" plugin compatibility added.
+- Added: "WP-Optimize" plugin compatibility.
+- Added: "Speed Booster Pack" plugin compatibility.
+- Added: NextGEN Gallery Support
+- Added: Comments pagination support added.
+
+- Improved: Related posts moved after share buttons.
+
+- Fixed: Incorrect AMP Author Avatar url (plugin conflict).
+- Fixed: iFrames height not comes from iFrame tag!
+- Fixed: Posts "hentry" class removed for better SEO results.
+- Fixed: "Auto URL Convertor" field description fixed.
+- Fixed: Exclude auto convert link only works for one pattern!
+- Fixed: single featured images goes out of box in mobile.
+
+
+----------------------------------------------------------------
+Version 1.4.0 - 10 Jul 2017
+----------------------------------------------------------------
+- Added: AMP "Above The Fold" plugin compatibility added.
+- Added: New option to exclude URL (and URL pattern) from AMP URL converter. You can use it to exclude subdirectories.
+
+- Improved: AMP pages SEO improved.
+- Improved: AMP validator improved. It's even smarter!
+
+- Fixed: AMP ads rtl style fixed.
+- Fixed: AMP minor warning fixed.
+
+
+----------------------------------------------------------------
+Version 1.3.3 - 17 May 2017
+----------------------------------------------------------------
+- Fixed: "Custom Permalinks" support added to BetterAMP.
+- Fixed: "link" tags will be removed from BetterAMP pages body section.
+- Fixed: Structured data validation issue with custom image logo (BetterAMP).
+- Fixed: "Convert Plug" plugin validation issue fixed.
+
+
+----------------------------------------------------------------
+Version 1.3.2 - 1 May 2017
+----------------------------------------------------------------
+- Fixed: AMP post inline ads not working properly.
+- Fixed: AMP PHP Warning. Thanks @isrgrajan
+
+
+----------------------------------------------------------------
+Version 1.3.1 - 25 Apr 2017
+----------------------------------------------------------------
+- Added: "WordPress Fastest Cache" plugin compatibility added.
+- Improved: is_better_amp() works before template_redirect action.
+
+
+----------------------------------------------------------------
+Version 1.3.0 - 20 Apr 2017
+----------------------------------------------------------------
+- Added: Static homepage support added.
+         You can chose a page to be shown for AMP homepage.
+
+- Added: Complete "Structured Data" support added.
+- Added: Complete YoastSEO compatibility added. No need to "Glue for Yoast SEO & AMP".
+- Added: Ad Location: AMP middle of post content ad location.
+
+- Improved: [video] shortcode compatibility improved.
+- Improved: Facebook and Vimeo embeds compatibility improved.
+- Improved: Improvement: Android title bar color will be same as BetterAMP theme color. Thanks @Antonio
+- Improved: BetterAds min supported version changed to 1.9
+
+- Fixed: BetterAMP will keeps elements inline styles.
+         Creates custom class and adds style code into page style section automatically.
+
+- Fixed: Incorrect homepage title when YoastSEO is active.
+- Fixed: Style sanitizer improved to make 100% Google validated codes.
+- Fixed: "WP Speed of Light" plugin compatibility.
+- Fixed: PHP old versions fatal error.
+- Fixed: AMP-IFRAME sanitizer improved to force protocol attribute.
+- Fixed: Social share links protocol changed to HTTPS
+- Fixed: Sanitizer value_url fixed to not print empty src!
+- Fixed: Facebook Comments Plugin compatibility. Extra codes (js and markups) will be removed.
+- Fixed: WooCommerce templates are overriding out of AMP! Thanks @ptsadmin
+
+----------------------------------------------------------------
+Version 1.2.2 - 1 Mar 2017
+----------------------------------------------------------------
+- Added: Video/Audio Featured support added to AMP.
+- Added: AMP Youtube, Twitter, Facebook, Vimeo, Soundcloud, Vine and Instagram support added.
+- Fixed: Thumbnail of static pages fixed to be responsive.
+
+
+----------------------------------------------------------------
+Version 1.2.1 - 27 Feb 2017
+----------------------------------------------------------------
+- Added: 'Better WordPress Minify' plugin Compatibility.
+- Fixed: Search page style issue fixed.
+
+
+----------------------------------------------------------------
+Version 1.2.0 - 21 Feb 2017
+----------------------------------------------------------------
+- Added: Option to show/hide share in pages.
+- Added: AMP Smart style printing. 200% smaller CSS file
+
+- Improved: AMP content validator layer improved.
+- Improved: Design.
+
+- Fixed: Blockquote style.
+- Fixed: Home slider RTL style fixed.
+- Fixed: Whatsapp link not works.
+- Fixed: AMP changed to amp for third-party plugins compatibility.
+- Fixed: Only 1 gallery is showing.
+
+
+----------------------------------------------------------------
+Version 1.1.2 - 15 Feb 2017
+----------------------------------------------------------------
+- Improved: RTL style checked and fixed for all pages.
+- Fixed: Large listing image style.
+- Fixed: Subtitle wrong tag close.
+- Fixed: Google Analytics not works.
+- Fixed: Missing close tag for
+
+
+----------------------------------------------------------------
+Version 1.1.1 - 13 Feb 2017
+----------------------------------------------------------------
+- Fixed: "WP Rocket" plugin lazy load compatibility.
+- Fixed: "Lazy Load" plugin compatibility.
+- Fixed: "Lazy Load XT" plugin compatibility.
+- Fixed: Customizer page not showing correctly.
+- Fixed: Scroll to end customizer page issue.
+
+
+----------------------------------------------------------------
+Version 1.1.0 - 11 Feb 2017
+----------------------------------------------------------------
+- Added AMP Ad Location 1: After header (in all pages)
+- Added AMP Ad Location 2: Before post title
+- Added AMP Ad Location 3: After post title
+- Added AMP Ad Location 4: Above post content
+- Added AMP Ad Location 5: Post content ads (After X Paragraph)
+- Added AMP Ad Location 6: Below post content
+- Added AMP Ad Location 7: After comments in posts
+- Added AMP Ad Location 8: Footer (in all pages)
+- Added AMP Ad Location 9: After title in archive pages
+- Added AMP Ad Location 10: After X posts in archive pages
+
+- Added: New level of AMP page validator added.
+  This validator includes all Google AMP rules and will make your site
+  content validated with 99% warranty! 
+  400+ AMP roles will be checked and fixed automaticaly - No need to pay for valiating your site
+
+- Added: WooCommerce support added to BetterAMP 
+         (Shop, Product, Shop Categories, Shop tags and Cart page)
+
+- Added: Attachment page support added to BetterAMP.
+
+- Added: Custom CSS field added to BetterAMP.
+
+- Fixed: A lof of code fix and improvement in BetterAMP.
+- Fixed: Undefined function fixed in BetterAMP.
+- Fixed: URL encode added to make sure shared URL will work correctly in social networks in RTL languages (Better AMP).
+- Fixed: Share link changed to pretty permalink (Better AMP).
+- Fixed: rel=amphtml generating for non-AMP pages fixed.
+- Fixed: Showing mega menu in AMP fixed.
+- Fixed: Social share sorter fixed in customizer (BetterAMP).
+
+
+----------------------------------------------------------------
+Version 1.0.2 - 15 Jan 2017
+----------------------------------------------------------------
+- Improved: AMP style improved.
+- Fixed: AMP search page style fixed.
+
+----------------------------------------------------------------
+Version 1.0.0 - 13 Jan 2017 - Completely new plugin
+----------------------------------------------------------------
+Note: Please note you should regenerate thumbnails again also you should clear permalinks by saving it again!.
+
+- BetterAMP Developed completely from scratch to fix all previous validation issues also to add complete WordPress support.
+- Live demo: http://demo.betterstudio.com/publisher/amp-demo/
+- Added: Pages, Categories, Tags, Taxonomies, Search support to AMP added.
+- Added: 2 listing (large and small) added for AMP archive pages.
+- Added: AMP sidebar with navigation and site logo added.
+- Added: Search functionality added to AMP
+- Added: Footer navigation added to AMP
+- Added: Social share + share count added to AMP
+- Added: Comments section added to AMP post
+- Added: Google Analytics added to AMP.
+- Added: AMP customizer panel added to change everything from WP Customizer.
+- Added: Option to exclude pages from AMP added.
+- Added: Slider for homepage added for AMP
+- Added: Translation Panel added to AMP.
+- Added: AMP Compatibility for "W3 total cache", "WP Super Cache" and "WP Rocket" added.
+- Improved: AMP redesigned completely.
+- Fixed: All AMP validation issues fixed.
+
+
+
+
+----------------------------------------------------------------
+Version 1.1.4 - 14 Nov 2016
+----------------------------------------------------------------
+- Improved: Codes and panel.
+
+
+----------------------------------------------------------------
+Version 1.1.3 - 6 Oct 2016
+----------------------------------------------------------------
+- Public release in Publisher.
