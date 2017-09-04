@@ -790,7 +790,7 @@ if ( ! function_exists( 'publisher_listing_social_share' ) ) {
 			}
 
 			?>
-			<div class="share-handler-wrap">
+			<div class="share-handler-wrap <?php echo publisher_get_option( 'social_share_more' ) !== 'yes' ? 'bs-pretty-tabs-initialized' : ''; ?>">
 				<span class="share-handler post-share-btn <?php echo $rank['id']; ?>">
 					<?php
 
@@ -4207,13 +4207,13 @@ if ( ! function_exists( 'publisher_fix_bs_listing_vc_atts' ) ) {
 		 */
 		if ( ! empty( $atts['heading_color'] ) || $heading_style !== publisher_get_option( 'section_heading_style' ) ) {
 
+			$class = 'bscb-' . mt_rand( 10000, 100000 );
+
 			// custom calss
 			if ( empty( $atts['css-class'] ) ) {
-				$atts['css-class'] = 'bscb-' . mt_rand( 10000, 100000 );
-				$class             = $atts['css-class'];
+				$atts['css-class'] = $class;
 			} else {
-				$class = explode( ' ', $atts['css-class'] );
-				$class = trim( $class[0] );
+				$atts['css-class'] = "$class  {$atts['css-class']}";
 			}
 
 			//
@@ -4278,12 +4278,16 @@ if ( ! function_exists( 'publisher_fix_bs_listing_vc_atts' ) ) {
 			if ( ! empty( $atts['_style_bg_color'] ) ) {
 
 				// custom calss
-				if ( empty( $atts['css-class'] ) ) {
-					$atts['css-class'] = 'bs-cb' . mt_rand( 10000, 100000 );
-					$class             = $atts['css-class'];
-				} else {
-					$class = explode( ' ', $atts['css-class'] );
-					$class = trim( $class[0] );;
+				if ( ! isset( $class ) ) {
+
+					$class = 'bscb-' . mt_rand( 10000, 100000 );
+
+					// custom calss
+					if ( empty( $atts['css-class'] ) ) {
+						$atts['css-class'] = $class;
+					} else {
+						$atts['css-class'] = "$class  {$atts['css-class']}";
+					}
 				}
 
 				$blocks = array(
@@ -4461,15 +4465,19 @@ if ( ! function_exists( 'publisher_get_single_template' ) ) {
 
 		$template = 'default';
 
-		// Customized in category
-		$main_term = publisher_get_post_primary_cat();
-		if ( ! is_wp_error( $main_term ) && is_object( $main_term ) ) {
-			$template = bf_get_term_meta( 'single_template', $main_term );
-		}
-
 		// Customized template in post
 		if ( isset( $_check[ $template ] ) ) {
 			$template = bf_get_post_meta( 'post_template' );
+		}
+
+		// Customized in category
+		if ( isset( $_check[ $template ] ) ) {
+
+			$main_term = publisher_get_post_primary_cat();
+
+			if ( ! is_wp_error( $main_term ) && is_object( $main_term ) ) {
+				$template = bf_get_term_meta( 'single_template', $main_term );
+			}
 		}
 
 		// General Post Template
@@ -4796,7 +4804,7 @@ if ( ! function_exists( 'publisher_get_post_comments_type' ) ) {
 		}
 
 		// Change ajaxified to show simple when user submitted an comment before
-		if ( $type == 'show-ajaxified' && ! empty( $_GET['publisher-theme-comment-inserted'] ) && $_GET['publisher-theme-comment-inserted'] == '1' ) {
+		if ( $type == 'show-ajaxified' && ! empty( $_GET['bs-comment-added'] ) && $_GET['bs-comment-added'] == '1' ) {
 			$type = 'show-simple';
 		}
 

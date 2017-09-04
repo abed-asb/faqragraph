@@ -1,7 +1,7 @@
 /*
 Theme Name: Publisher
 Theme URI: http://themeforest.net/item/publisher/15801051?ref=Better-Studio
-Version: 1.9.1
+Version: 1.9.3
 Description: Designed by <a href="http://betterstudio.com/">BetterStudio</a>
 Author: BetterStudio
 Author URI: http://betterstudio.com/
@@ -7827,8 +7827,8 @@ body.bs-ll-d .listing-mg-type-1 .img-cont ,
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     line-height: 1.4;
 }
-.listing-item.listing-mg-type-1 .title.title a.post-url,
-.listing-item.listing-mg-type-1 .title.title a.post-url:hover{
+.listing-item.listing-mg-type-1 .title.title a.post-url.post-url,
+.listing-item.listing-mg-type-1 .title.title a.post-url.post-url:hover{
     color: inherit !important;
 }
 .listing-mg-type-1 .post-meta,
@@ -10890,6 +10890,22 @@ body.bs-ll-d .listing-mg-6-item .img-cont,
     border-width: 2px;
     margin-top: -13px;
 }
+.listing-user.columns-1 .listing-item-user{
+    padding-bottom: 0 !important;
+}
+.listing-user .listing-item-user{
+    padding-bottom: 0 !important;
+}
+
+.bs-listing.bs-listing-user-listing-1 .bs-slider-dots:first-child:last-child,
+.bs-listing.bs-listing-user-listing-2 .bs-slider-dots:first-child:last-child,
+.bs-listing.bs-listing-user-listing-3 .bs-slider-dots:first-child:last-child,
+.bs-listing.bs-listing-user-listing-4 .bs-slider-dots:first-child:last-child{
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
 
 /* Type 1 */
 .listing-item-user.type-1 .user-social-icons .social-item a:hover{
@@ -12971,6 +12987,10 @@ body.bs-ll-d .bs-slider-item .img-cont,
 }
 .bs-social-share.style-button span.social-item a span{
     margin-left: 7px;
+}
+.bs-social-share.style-button span.social-item a span:last-child:first-child{
+    margin-right: 0;
+    margin-left: 0;
 }
 .bs-social-share.style-button.no-title-style span.social-item a{
     width: 40px;
@@ -21551,12 +21571,6 @@ h1 + hr.bs-divider{
     background: #fff;
     text-align: center;
     line-height: 30px;
-}
-.wpb_flexslider.flexslider:hover .flex-prev {
-    left: 40px;
-}
-.wpb_flexslider.flexslider:hover .flex-next {
-    right: 40px;
 }
 .wpb_gmaps_widget .wpb_wrapper{
      padding: 0 !important;

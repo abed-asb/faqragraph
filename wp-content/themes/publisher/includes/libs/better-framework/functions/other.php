@@ -1596,10 +1596,24 @@ if ( ! function_exists( 'bf_social_share_fetch_count' ) ) {
 
 					$response = json_decode( wp_remote_retrieve_body( $remote ), TRUE );
 
+					$count = 0;
+
+					if ( isset( $response['engagement']['reaction_count'] ) ) {
+						$count += $response['engagement']['reaction_count'];
+					}
+
+					if ( isset( $response['engagement']['comment_count'] ) ) {
+						$count += $response['engagement']['comment_count'];
+					}
+
+					if ( isset( $response['engagement']['comment_plugin_count'] ) ) {
+						$count += $response['engagement']['comment_plugin_count'];
+					}
+
 					if ( isset( $response['engagement']['share_count'] ) ) {
-						$count = $response['engagement']['share_count'];
+						$count += $response['engagement']['share_count'];
 					} elseif ( isset( $response['share']['share_count'] ) ) {
-						$count = $response['share']['share_count'];
+						$count += $response['share']['share_count'];
 					}
 				}
 
@@ -2103,23 +2117,27 @@ if ( ! function_exists( 'bf_render_css_block_array' ) ) {
 	/**
 	 * Converts BF CSS Array to CSS code
 	 *
-	 * @param $block
+	 * @param array $block
 	 * @param $value
 	 *
 	 * @return array
 	 */
 	function bf_render_css_block_array( $block, $value ) {
 
+		if(empty($block) || ! is_array($block)) {
+			return array('code' => '');
+		}
+		
 		$result = array(
 			'code' => '',
 		);
 
-		$skep_validation = empty( $block['skip_validation'] );
+		$skip_validation = empty( $block['skip_validation'] );
 
 		// if value is empty
-		if ( empty( $value ) && $skep_validation ) {
+		if ( empty( $value ) && $skip_validation ) {
 			return $result;
-		} elseif ( ! $skep_validation ) {
+		} elseif ( ! $skip_validation ) {
 			unset( $block['skip_validation'] );
 		}
 

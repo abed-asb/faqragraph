@@ -193,6 +193,7 @@ return array(
 					// 63 is reserved
 					// 64 is reserved
 					65 => '.comment-list .comment-content em.needs-approve',
+					66 => '.better-newsticker ul.news-list li a:hover',
 				),
 			'prop'     =>
 				array(

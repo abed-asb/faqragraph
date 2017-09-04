@@ -511,7 +511,10 @@ class Publisher {
 						'sticky_gap' => 30,
 						'sticky'     => (bool) $skyscraper_info['sticky'],
 						'position'   => $skyscraper_info['position'],
-					)
+					),
+					'share'        => array(
+						'more' => publisher_get_option( 'social_share_more' ) === 'yes',
+					),
 				)
 			)
 		);

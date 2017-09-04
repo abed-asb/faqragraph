@@ -51,7 +51,7 @@ class Publisher_Theme_Core {
 	 *
 	 * @var string
 	 */
-	private $version = '1.4.0';
+	private $version = '1.5.0';
 
 
 	/**

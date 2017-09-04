@@ -142,7 +142,7 @@ add_filter( 'comment_post_redirect', 'publisher_comment_post_redirect' );
 
 if ( ! function_exists( 'publisher_comment_post_redirect' ) ) {
 	/**
-	 * Handy function to add 'publisher-theme-comment-inserted' to query string after inserting comment
+	 * Handy function to add 'bs-comment-added' to query string after inserting comment
 	 * @access private
 	 *
 	 * @param $location
@@ -152,7 +152,7 @@ if ( ! function_exists( 'publisher_comment_post_redirect' ) ) {
 	function publisher_comment_post_redirect( $location ) {
 
 		$location = add_query_arg( array(
-			'publisher-theme-comment-inserted' => '1',
+			'bs-comment-added' => '1',
 		), $location );
 
 		return $location;

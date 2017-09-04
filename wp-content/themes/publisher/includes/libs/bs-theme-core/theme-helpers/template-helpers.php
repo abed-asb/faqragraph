@@ -987,7 +987,10 @@ if ( ! function_exists( 'bf_get_block_size' ) ) {
 			$coefficient = 1;
 
 			if ( isset( $vc_state['column']['width'] ) ) {
-				@ list ( $num, $denom ) = explode( '/', $vc_state['column']['width'] );
+
+				$_explode = explode( '/', $vc_state['column']['width'] );
+				$num      = $_explode[0];
+				$denom    = isset( $_explode[1] ) ? $_explode[1] : NULL;
 
 				if ( $num && $denom ) {
 					$coefficient *= $num / $denom;
@@ -995,7 +998,11 @@ if ( ! function_exists( 'bf_get_block_size' ) ) {
 			}
 
 			if ( isset( $vc_state['row']['width'] ) ) {
-				@ list ( $num, $denom ) = explode( '/', $vc_state['row']['width'] );
+
+				$_explode = explode( '/', $vc_state['row']['width'] );
+
+				$num   = $_explode[0];
+				$denom = isset( $_explode[1] ) ? $_explode[1] : NULL;
 
 				if ( $num && $denom ) {
 					$coefficient *= $num / $denom;

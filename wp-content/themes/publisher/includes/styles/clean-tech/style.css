@@ -954,6 +954,11 @@ div.bbp-reply-header:last-child{
     background: #fff;
     border: 1px solid #dedede;
 }
+.bs-vc-block .wpb_flexslider{
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
 @media (max-width: 880px) {
     .wpb_single_image,
     .wpb_images_carousel > .wpb_wrapper > .vc_images_carousel{
@@ -1099,3 +1104,13 @@ div.bbp-reply-header:last-child{
     background: transparent;
 }
 
+
+/**
+ * ->User Listing
+ **/
+.listing-item-user.type-2 .bs-user-item:hover,
+.listing-item-user.type-2 .bs-user-item{
+    padding: 0 0 20px;
+    border:none;
+    box-shadow: none;
+}

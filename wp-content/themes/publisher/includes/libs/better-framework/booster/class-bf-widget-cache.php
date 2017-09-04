@@ -12,10 +12,6 @@
  * @extends    BF_Item_Cache
  */
 
-
-BF_Widget_Cache::Run();
-
-
 class BF_Widget_Cache extends BF_Booster_Cache {
 
 	/**
@@ -170,3 +166,5 @@ class BF_Widget_Cache extends BF_Booster_Cache {
 		}
 	}
 }
+
+BF_Widget_Cache::Run();

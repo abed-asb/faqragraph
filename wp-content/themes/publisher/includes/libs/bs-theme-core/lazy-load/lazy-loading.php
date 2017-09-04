@@ -545,7 +545,7 @@ if ( ! function_exists( 'publisher_add_bs_srcset_attr' ) ) {
 	 */
 	function publisher_add_bs_srcset_attr( $atts, $attachment, $size ) {
 
-		if ( isset( $GLOBALS['publisher_catch_featured_image_id'] ) && $attachment->ID == $GLOBALS['publisher_catch_featured_image_id'] ) {
+		if ( isset( $GLOBALS['publisher_catch_featured_image_id'] ) && isset( $attachment->ID ) && $attachment->ID == $GLOBALS['publisher_catch_featured_image_id'] ) {
 
 			if ( $srcset = publisher_generate_bs_srcset( $attachment->ID, $size ) ) {
 

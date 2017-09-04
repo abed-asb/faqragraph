@@ -19,6 +19,7 @@ class Publisher_User_Listing_1_Shortcode extends Publisher_Theme_Listing_Shortco
 		$_options = array(
 			'defaults'       => array(
 				'columns' => 1,
+				'style'   => 'user-listing-1',
 			),
 			'have_widget'    => TRUE,
 			'have_vc_add_on' => TRUE,
@@ -184,6 +185,7 @@ class Publisher_User_Listing_2_Shortcode extends Publisher_Theme_Listing_Shortco
 		$_options = array(
 			'defaults'       => array(
 				'columns' => 1,
+				'style'   => 'user-listing-2',
 			),
 			'have_widget'    => TRUE,
 			'have_vc_add_on' => TRUE,
@@ -349,6 +351,7 @@ class Publisher_User_Listing_3_Shortcode extends Publisher_Theme_Listing_Shortco
 		$_options = array(
 			'defaults'       => array(
 				'columns' => '',
+				'style'   => 'user-listing-3',
 			),
 			'have_widget'    => TRUE,
 			'have_vc_add_on' => TRUE,
@@ -514,6 +517,7 @@ class Publisher_User_Listing_4_Shortcode extends Publisher_Theme_Listing_Shortco
 		$_options = array(
 			'defaults'       => array(
 				'columns' => 3,
+				'style'   => 'user-listing-4',
 			),
 			'have_widget'    => TRUE,
 			'have_vc_add_on' => TRUE,
@@ -681,6 +685,7 @@ class Publisher_User_Listing_5_Shortcode extends Publisher_Theme_Listing_Shortco
 		$_options = array(
 			'defaults'       => array(
 				'columns' => 3,
+				'style'   => 'user-listing-5',
 			),
 			'have_widget'    => TRUE,
 			'have_vc_add_on' => TRUE,

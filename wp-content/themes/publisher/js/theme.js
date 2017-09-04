@@ -1161,9 +1161,7 @@ var Publisher_Theme = (function ($) {
         bsPrettyTabs: function () {
 
             // Share Box
-            (function () {
-
-
+            if( publisher_theme_global_loc.share.more ){
                 var shareBoxSelector = '.share-handler-wrap';
                 $(shareBoxSelector).on('click', '.bs-pretty-tabs-more', function () {
 
@@ -1191,8 +1189,7 @@ var Publisher_Theme = (function ($) {
                     },
                     moreContainer: '<a class="bs-pretty-tabs-more post-share-btn"><i class="bf-icon fa fa-plus"></i></a><ul class="bs-pretty-tabs-elements"></ul>',
                 });
-            })();
-
+            }
 
             // Collect menu items into "more"
             if (publisher_theme_global_loc.main_menu.more_menu === 'enable') {

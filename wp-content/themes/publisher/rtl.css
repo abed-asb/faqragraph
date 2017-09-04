@@ -3108,7 +3108,7 @@ body.open-rh .rh-cover {
 /**
  * ->Social Share Widget
  **/
-.bs-social-share li.social-item {
+.bs-social-share span.social-item {
     float: right;
     margin-left: 6px;
     margin-right: auto;
@@ -3118,24 +3118,37 @@ body.open-rh .rh-cover {
 /**
  * -->Social Share Style Button
  **/
-.bs-social-share.style-button li.social-item a span {
+.bs-social-share.style-button span.social-item a span {
     margin-right: 7px;
     margin-left: auto;
 }
-.bs-social-share.style-button.no-title-style li.social-item a .fa {
+.bs-social-share.style-button.no-title-style span.social-item a .fa {
     margin-left: 0;
     margin-right: auto;
+}
+
+.bs-social-share.style-button.colored span.social-item.line .fa.fa-line-it {
+    margin-right: -5px;
+    margin-left: auto;
+}
+.bs-social-share.style-button.colored span.social-item.bbm .fa.fa-bbm {
+    margin-right: -3px;
+    margin-left: auto;
+}
+.bs-social-share.style-button.colored span.social-item.viber .fa.fa-viber {
+    margin-right: -5px;
+    margin-left: auto;
 }
 
 
 /**
  * -->Social Share Outline Button
  **/
-.bs-social-share.style-outline-button li.social-item a .fa {
+.bs-social-share.style-outline-button span.social-item a .fa {
     margin-left: 5px;
     margin-right: auto;
 }
-.bs-social-share.style-outline-button.no-title-style li.social-item a .fa {
+.bs-social-share.style-outline-button.no-title-style span.social-item a .fa {
     margin-left: 0;
     margin-right: auto;
 }
@@ -4821,14 +4834,6 @@ ul.bs-shortcode-list li:before {
     right: -1px;
     left: auto;
 }
-.wpb_flexslider.flexslider:hover .flex-prev {
-    right: 40px;
-    left: auto;
-}
-.wpb_flexslider.flexslider:hover .flex-next {
-    left: 40px;
-    right: auto;
-}
 
 
 /**
@@ -5057,18 +5062,21 @@ ul.bs-shortcode-list li:before {
 /**
  * ->Skyscraper Ads
  **/
-.bs-sks .bs-sksitemr {
-    left: 50%;
+.bs-sks .bs-sksitem{
+    float: right;
+}
+.bs-sks .bs-sksiteml{
     right: auto;
+    left: 50%;
 }
-.bs-sks .bs-sksiteml {
-    right: 50%;
+.bs-sks .bs-sksitemr{
     left: auto;
+    right: 50%;
 }
-.bs-sks  .bs-sksitemr .bsac {
+.bs-sks  .bs-sksiteml .bsac{
     float: left;
 }
-.bs-sks  .bs-sksiteml .bsac {
+.bs-sks  .bs-sksitemr .bsac{
     float: right;
 }
 

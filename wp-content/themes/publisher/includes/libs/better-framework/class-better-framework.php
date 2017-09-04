@@ -57,7 +57,7 @@ class Better_Framework {
 	 *
 	 * @var string
 	 */
-	public $version = '3.2.0';
+	public $version = '3.3.0';
 
 
 	/**
@@ -1423,16 +1423,20 @@ class Better_Framework {
 				// Option Panel, Ajax Field
 				case( 'ajax_field' ):
 
-					if ( isset( $_REQUEST['callback'] ) &&
-					     is_callable( $_REQUEST['callback'] ) &&
-					     is_array(
-						     $to_return = call_user_func_array( $_REQUEST['callback'], array(
-							     ! empty( $_REQUEST['key'] ) ? $_REQUEST['key'] : '',
-							     ! empty( $_REQUEST['exclude'] ) ? $_REQUEST['exclude'] : ''
-						     ) )
-					     )
-					) {
-						echo count( $to_return ) === 0 ? - 1 : json_encode( $to_return );
+					if ( isset( $_REQUEST['callback'] ) && is_callable( $_REQUEST['callback'] ) ) {
+
+						$cb = $_REQUEST['callback'];
+
+						$cb_args = array(
+							! empty( $_REQUEST['key'] ) ? $_REQUEST['key'] : '',
+							! empty( $_REQUEST['exclude'] ) ? $_REQUEST['exclude'] : ''
+						);
+
+						$to_return = call_user_func_array( $cb, $cb_args );
+
+						if ( is_array( $to_return ) ) {
+							echo count( $to_return ) === 0 ? - 1 : json_encode( $to_return );
+						}
 					}
 
 					break;

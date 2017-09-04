@@ -1026,3 +1026,14 @@ div.bbp-reply-header:last-child{
 .comments-template-multiple #wordpress-comment-section .comment-respond:first-child{
     margin-top: 0 !important;
 }
+
+
+/**
+ * ->User Listing
+ **/
+.listing-item-user.type-2 .bs-user-item:hover,
+.listing-item-user.type-2 .bs-user-item{
+    padding: 0 0 20px;
+    border:none;
+    box-shadow: none;
+}

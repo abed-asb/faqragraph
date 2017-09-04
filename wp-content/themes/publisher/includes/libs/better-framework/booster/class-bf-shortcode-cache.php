@@ -12,10 +12,6 @@
  * @extends    BF_Item_Cache
  */
 
-
-BF_Shortcode_Cache::Run();
-
-
 class BF_Shortcode_Cache extends BF_Booster_Cache {
 
 	/**
@@ -241,3 +237,5 @@ class BF_Shortcode_Cache extends BF_Booster_Cache {
 		}
 	}
 }
+
+BF_Shortcode_Cache::Run();

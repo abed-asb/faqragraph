@@ -293,7 +293,7 @@ class Publisher_Setup {
 	function register_better_framework( $frameworks ) {
 
 		$frameworks[] = array(
-			'version' => '3.2.0',
+			'version' => '3.3.0',
 			'path'    => PUBLISHER_THEME_PATH . 'includes/libs/better-framework/',
 			'uri'     => PUBLISHER_THEME_URI . 'includes/libs/better-framework/',
 		);
@@ -1107,25 +1107,10 @@ class Publisher_Setup {
 
 			if ( ! empty( $update_status->themes[ $item_id ] ) ) {
 
-				$new_version   = $update_status->themes[ $item_id ] ['new_version'];
-				$title         = sprintf( __( 'Publisher v%s update is available.', 'publisher' ), $new_version );
-				$changelog_btn = '';
-
-				if ( $update_status->themes[ $item_id ]['changelog'] ) {
-					$changelog_btn = sprintf(
-						'<a href="%s" class="button button-secondary thickbox">%s</a>',
-						add_query_arg( array(
-							'TB_iframe' => 'true',
-							'width'     => 763,
-							'height'    => 1323,
-						), $update_status->themes[ $item_id ]['changelog'] ),
-						sprintf( __( 'View v%s Changelog', 'publisher' ), $new_version )
-					);
-				}
+				$new_version = $update_status->themes[ $item_id ] ['new_version'];
 
 				bf_add_notice( array(
-					'msg'            => sprintf( '<h3 class="title">%s</h3> <a href="%s" class="button button-primary">%s</a> %s',
-						$title, get_admin_url( NULL, 'update-core.php' ), __( 'Update Publisher', 'publisher' ), $changelog_btn ),
+					'msg'            => array( 'Publisher_Setup', 'update_notice_message' ),
 					//
 					'notice-icon'    => PUBLISHER_THEME_URI . 'images/admin/notice-logo.png',
 					'product'        => 'theme:publisher',
@@ -1134,6 +1119,8 @@ class Publisher_Setup {
 					'state'          => 'success',
 					'id'             => 'publisher-v' . $new_version,
 					'show_all_label' => __( '… See all plugins', 'publisher' ),
+					'_message_type'  => 'theme-update',
+					'_settings'      => $update_status->themes[ $item_id ],
 				) );
 			}
 		}
@@ -1189,7 +1176,39 @@ class Publisher_Setup {
 			return '';
 		}
 
-		if ( $notice['_message_type'] === 'template' ) {
+		if ( $notice['_message_type'] === 'theme-update' ) {
+			global $pagenow;
+
+			// Do not show theme update notice in appearance and updates pages
+			if ( $pagenow === 'themes.php' || $pagenow === 'update-core.php' ) {
+				return '';
+			}
+
+			if ( ! isset( $notice['_settings']['new_version'] ) ) {
+				return '';
+			}
+
+			$new_version   = $notice['_settings']['new_version'];
+			$title         = sprintf( __( 'Publisher v%s update is available.', 'publisher' ), $new_version );
+			$changelog_btn = '';
+
+			if ( ! empty( $notice['_settings']['changelog'] ) ) {
+				$changelog_btn = sprintf(
+					'<a href="%s" class="button button-secondary thickbox">%s</a>',
+					add_query_arg( array(
+						'TB_iframe' => 'true',
+						'width'     => 763,
+						'height'    => 1323,
+					), $notice['_settings']['changelog'] ),
+					sprintf( __( 'View v%s Changelog', 'publisher' ), $new_version )
+				);
+			}
+
+			return sprintf( '<h3 class="title">%s</h3> <a href="%s" class="button button-primary">%s</a> %s',
+				$title, get_admin_url( NULL, 'update-core.php' ), __( 'Update Publisher', 'publisher' ), $changelog_btn );
+
+
+		} elseif ( $notice['_message_type'] === 'template' ) {
 
 			//
 			// notice message about child-theme outdated files
@@ -1224,6 +1243,12 @@ class Publisher_Setup {
 				add_query_arg( 'template-compatibility', 'check' ), __( 'Check Again', 'publisher' ) );
 
 		} elseif ( $notice['_message_type'] === 'plugin' ) {
+			global $pagenow;
+
+			// Do not show plugin update notice in plugins page
+			if ( $pagenow === 'admin.php' && isset( $_GET['page'] ) && 'bs-product-pages-install-plugin' === $_GET['page'] ) {
+				return;
+			}
 
 			//
 			// notice message about theme/plugin updates
@@ -1261,17 +1286,13 @@ class Publisher_Setup {
 			}
 
 			if ( $plugin2update ) {
-				global $pagenow;
 
 				$msg = sprintf( '<h3 class="title">%s</h3> <div class="detail"><ul>%s</ul> ', __( 'Update Available for Publisher Plugins', 'publisher' ), $plugin2update );
 
-				if ( ! ( $pagenow === 'admin.php' && isset( $_GET['page'] ) && 'bs-product-pages-install-plugin' === $_GET['page'] ) ) {
-
-					$msg .= sprintf(
-						'<a href="%s" class="button button-primary">%s</a>',
-						get_admin_url( NULL, 'admin.php?page=bs-product-pages-install-plugin' ), __( 'Update Plugins', 'publisher' )
-					);
-				}
+				$msg .= sprintf(
+					'<a href="%s" class="button button-primary">%s</a>',
+					get_admin_url( NULL, 'admin.php?page=bs-product-pages-install-plugin' ), __( 'Update Plugins', 'publisher' )
+				);
 
 				$msg .= '</div>';
 

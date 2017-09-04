@@ -691,6 +691,10 @@ $fields['social_share_permalink_type'] = array(
 	'std' => 'permalink',
 );
 
+$fields['social_share_more'] = array(
+	'std' => 'yes',
+);
+
 $fields['social_share_top_style'] = array(
 	'std' => 'style-1',
 );

@@ -1997,7 +1997,7 @@ $fields[]                         = array(
 	'state' => 'close',
 	'level' => 2,
 );
-$fields['resp_settings']        = array(
+$fields['resp_settings']          = array(
 	'name'            => __( 'Sections of Mobile Header & Menu', 'publisher' ),
 	'desc'            => __( 'You can enable sections you want to show in mobile header.', 'publisher' ),
 	'id'              => 'resp_settings',
@@ -2490,6 +2490,16 @@ $fields['social_share_permalink_type'] = array(
 	'options'    => array(
 		'permalink' => __( 'Normal URL', 'publisher' ),
 		'shortlink' => __( 'Shortlink', 'publisher' ),
+	),
+);
+$fields['social_share_more']           = array(
+	'name'    => __( 'Show Only 1 Line of Share Buttons.', 'publisher' ),
+	'desc'    => __( 'Publisher will collects all extra buttons and will ads 1 load mored buttons to make sure your site will looks pretty.', 'publisher' ),
+	'id'      => 'social_share_more',
+	'type'    => 'select',
+	'options' => array(
+		'yes' => __( 'Yes, Collect', 'publisher' ),
+		'no'  => __( 'No, Show all in multiple lines', 'publisher' ),
 	),
 );
 $fields['social_share_page']           = array(
